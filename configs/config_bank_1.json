@@ -1,0 +1,596 @@
+{
+    "last_updated": "2026-03-30",
+    "sector": "Bank",
+    "stocks": {
+        "JPM": {
+            "new": false,
+            "watching_since": "2026-03-30",
+            "fetch_news": false,
+            "fetch_earnings": false,
+            "fetch_headlines": false,
+            "technical_indicators": {
+                "RSI": [
+                    14
+                ],
+                "MACD": [
+                    {
+                        "fast_period": 12,
+                        "slow_period": 26,
+                        "signal_period": 9
+                    }
+                ],
+                "STOCH": [
+                    {
+                        "k_period": 14,
+                        "d_period": 3,
+                        "smooth_k": 3
+                    }
+                ],
+                "EMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "VWAP": [],
+                "VWMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "HMA": [
+                    20
+                ],
+                "ADX": [
+                    14
+                ],
+                "BBANDS": [
+                    {
+                        "period": 20,
+                        "stddev": 2
+                    }
+                ],
+                "ATR": [
+                    14
+                ],
+                "CMF": [
+                    20
+                ],
+                "OBV": [],
+                "ZSCORE": [
+                    30
+                ]
+            }
+        },
+        "RY": {
+            "new": false,
+            "watching_since": "2026-03-30",
+            "fetch_news": false,
+            "fetch_earnings": false,
+            "fetch_headlines": false,
+            "technical_indicators": {
+                "RSI": [
+                    14
+                ],
+                "MACD": [
+                    {
+                        "fast_period": 12,
+                        "slow_period": 26,
+                        "signal_period": 9
+                    }
+                ],
+                "STOCH": [
+                    {
+                        "k_period": 14,
+                        "d_period": 3,
+                        "smooth_k": 3
+                    }
+                ],
+                "EMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "VWAP": [],
+                "VWMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "HMA": [
+                    20
+                ],
+                "ADX": [
+                    14
+                ],
+                "BBANDS": [
+                    {
+                        "period": 20,
+                        "stddev": 2
+                    }
+                ],
+                "ATR": [
+                    14
+                ],
+                "CMF": [
+                    20
+                ],
+                "OBV": [],
+                "ZSCORE": [
+                    30
+                ]
+            }
+        },
+        "BAC": {
+            "new": false,
+            "watching_since": "2026-03-30",
+            "fetch_news": false,
+            "fetch_earnings": false,
+            "fetch_headlines": false,
+            "technical_indicators": {
+                "RSI": [
+                    14
+                ],
+                "MACD": [
+                    {
+                        "fast_period": 12,
+                        "slow_period": 26,
+                        "signal_period": 9
+                    }
+                ],
+                "STOCH": [
+                    {
+                        "k_period": 14,
+                        "d_period": 3,
+                        "smooth_k": 3
+                    }
+                ],
+                "EMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "VWAP": [],
+                "VWMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "HMA": [
+                    20
+                ],
+                "ADX": [
+                    14
+                ],
+                "BBANDS": [
+                    {
+                        "period": 20,
+                        "stddev": 2
+                    }
+                ],
+                "ATR": [
+                    14
+                ],
+                "CMF": [
+                    20
+                ],
+                "OBV": [],
+                "ZSCORE": [
+                    30
+                ]
+            }
+        },
+        "TD": {
+            "new": false,
+            "watching_since": "2026-03-30",
+            "fetch_news": false,
+            "fetch_earnings": false,
+            "fetch_headlines": false,
+            "technical_indicators": {
+                "RSI": [
+                    14
+                ],
+                "MACD": [
+                    {
+                        "fast_period": 12,
+                        "slow_period": 26,
+                        "signal_period": 9
+                    }
+                ],
+                "STOCH": [
+                    {
+                        "k_period": 14,
+                        "d_period": 3,
+                        "smooth_k": 3
+                    }
+                ],
+                "EMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "VWAP": [],
+                "VWMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "HMA": [
+                    20
+                ],
+                "ADX": [
+                    14
+                ],
+                "BBANDS": [
+                    {
+                        "period": 20,
+                        "stddev": 2
+                    }
+                ],
+                "ATR": [
+                    14
+                ],
+                "CMF": [
+                    20
+                ],
+                "OBV": [],
+                "ZSCORE": [
+                    30
+                ]
+            }
+        },
+        "BMO": {
+            "new": false,
+            "watching_since": "2026-03-30",
+            "fetch_news": false,
+            "fetch_earnings": false,
+            "fetch_headlines": false,
+            "technical_indicators": {
+                "RSI": [
+                    14
+                ],
+                "MACD": [
+                    {
+                        "fast_period": 12,
+                        "slow_period": 26,
+                        "signal_period": 9
+                    }
+                ],
+                "STOCH": [
+                    {
+                        "k_period": 14,
+                        "d_period": 3,
+                        "smooth_k": 3
+                    }
+                ],
+                "EMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "VWAP": [],
+                "VWMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "HMA": [
+                    20
+                ],
+                "ADX": [
+                    14
+                ],
+                "BBANDS": [
+                    {
+                        "period": 20,
+                        "stddev": 2
+                    }
+                ],
+                "ATR": [
+                    14
+                ],
+                "CMF": [
+                    20
+                ],
+                "OBV": [],
+                "ZSCORE": [
+                    30
+                ]
+            }
+        },
+        "WFC": {
+            "new": false,
+            "watching_since": "2026-03-30",
+            "fetch_news": false,
+            "fetch_earnings": false,
+            "fetch_headlines": false,
+            "technical_indicators": {
+                "RSI": [
+                    14
+                ],
+                "MACD": [
+                    {
+                        "fast_period": 12,
+                        "slow_period": 26,
+                        "signal_period": 9
+                    }
+                ],
+                "STOCH": [
+                    {
+                        "k_period": 14,
+                        "d_period": 3,
+                        "smooth_k": 3
+                    }
+                ],
+                "EMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "VWAP": [],
+                "VWMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "HMA": [
+                    20
+                ],
+                "ADX": [
+                    14
+                ],
+                "BBANDS": [
+                    {
+                        "period": 20,
+                        "stddev": 2
+                    }
+                ],
+                "ATR": [
+                    14
+                ],
+                "CMF": [
+                    20
+                ],
+                "OBV": [],
+                "ZSCORE": [
+                    30
+                ]
+            }
+        },
+        "BNS": {
+            "new": false,
+            "watching_since": "2026-03-30",
+            "fetch_news": false,
+            "fetch_earnings": false,
+            "fetch_headlines": false,
+            "technical_indicators": {
+                "RSI": [
+                    14
+                ],
+                "MACD": [
+                    {
+                        "fast_period": 12,
+                        "slow_period": 26,
+                        "signal_period": 9
+                    }
+                ],
+                "STOCH": [
+                    {
+                        "k_period": 14,
+                        "d_period": 3,
+                        "smooth_k": 3
+                    }
+                ],
+                "EMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "VWAP": [],
+                "VWMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "HMA": [
+                    20
+                ],
+                "ADX": [
+                    14
+                ],
+                "BBANDS": [
+                    {
+                        "period": 20,
+                        "stddev": 2
+                    }
+                ],
+                "ATR": [
+                    14
+                ],
+                "CMF": [
+                    20
+                ],
+                "OBV": [],
+                "ZSCORE": [
+                    30
+                ]
+            }
+        },
+        "ING": {
+            "new": false,
+            "watching_since": "2026-03-30",
+            "fetch_news": false,
+            "fetch_earnings": false,
+            "fetch_headlines": false,
+            "technical_indicators": {
+                "RSI": [
+                    14
+                ],
+                "MACD": [
+                    {
+                        "fast_period": 12,
+                        "slow_period": 26,
+                        "signal_period": 9
+                    }
+                ],
+                "STOCH": [
+                    {
+                        "k_period": 14,
+                        "d_period": 3,
+                        "smooth_k": 3
+                    }
+                ],
+                "EMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "VWAP": [],
+                "VWMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "HMA": [
+                    20
+                ],
+                "ADX": [
+                    14
+                ],
+                "BBANDS": [
+                    {
+                        "period": 20,
+                        "stddev": 2
+                    }
+                ],
+                "ATR": [
+                    14
+                ],
+                "CMF": [
+                    20
+                ],
+                "OBV": [],
+                "ZSCORE": [
+                    30
+                ]
+            }
+        },
+        "C": {
+            "new": false,
+            "watching_since": "2026-03-30",
+            "fetch_news": false,
+            "fetch_earnings": false,
+            "fetch_headlines": false,
+            "technical_indicators": {
+                "RSI": [
+                    14
+                ],
+                "MACD": [
+                    {
+                        "fast_period": 12,
+                        "slow_period": 26,
+                        "signal_period": 9
+                    }
+                ],
+                "STOCH": [
+                    {
+                        "k_period": 14,
+                        "d_period": 3,
+                        "smooth_k": 3
+                    }
+                ],
+                "EMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "VWAP": [],
+                "VWMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "HMA": [
+                    20
+                ],
+                "ADX": [
+                    14
+                ],
+                "BBANDS": [
+                    {
+                        "period": 20,
+                        "stddev": 2
+                    }
+                ],
+                "ATR": [
+                    14
+                ],
+                "CMF": [
+                    20
+                ],
+                "OBV": [],
+                "ZSCORE": [
+                    30
+                ]
+            }
+        },
+        "MS": {
+            "new": false,
+            "watching_since": "2026-03-30",
+            "fetch_news": false,
+            "fetch_earnings": false,
+            "fetch_headlines": false,
+            "technical_indicators": {
+                "RSI": [
+                    14
+                ],
+                "MACD": [
+                    {
+                        "fast_period": 12,
+                        "slow_period": 26,
+                        "signal_period": 9
+                    }
+                ],
+                "STOCH": [
+                    {
+                        "k_period": 14,
+                        "d_period": 3,
+                        "smooth_k": 3
+                    }
+                ],
+                "EMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "VWAP": [],
+                "VWMA": [
+                    20,
+                    50,
+                    200
+                ],
+                "HMA": [
+                    20
+                ],
+                "ADX": [
+                    14
+                ],
+                "BBANDS": [
+                    {
+                        "period": 20,
+                        "stddev": 2
+                    }
+                ],
+                "ATR": [
+                    14
+                ],
+                "CMF": [
+                    20
+                ],
+                "OBV": [],
+                "ZSCORE": [
+                    30
+                ]
+            }
+        }
+    }
+}
