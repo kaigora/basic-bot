@@ -18,8 +18,8 @@ generate_prompt_files = True # True: if you want to inspect the prompt, this wil
 
 if __name__ == "__main__":
 
-    technical_list = []
-    prompts = []
+    technical_list = {}
+    prompts = {}
 
     for c in all_stock_configs:
         data_loader = DataFetcher(config_file=f"{FOLDER_PATH}{c}")
@@ -30,17 +30,17 @@ if __name__ == "__main__":
         market_analyst = MarketAnalyst(config_file=f"{FOLDER_PATH}{c}")
         market_analyst.load_data()
         technical = market_analyst.calculate_technicals()
-        technical_list.append(technical)
-        prompts.append(market_analyst.generate_llm_prompt(technical))
+        technical_list[c] = technical
+        prompts[c] = market_analyst.generate_llm_prompt(technical)
     
     client = genai.Client(api_key=GEMINI_API_KEY)
-    responses = []
+    responses = {}
 
-    for p in prompts:
+    for k in prompts:
         resp = client.models.generate_content(
             model="gemini-3.1-pro-preview",
             contents=p
         )
-        responses.append(resp.text)
+        responses[k] = resp.text
 
 
