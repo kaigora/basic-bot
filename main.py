@@ -43,4 +43,8 @@ if __name__ == "__main__":
         )
         responses[k] = resp.text
 
+        if generate_prompt_files:
+            with open(f"{k}.txt", "w") as file:
+                file.write(resp.text)
+
 
