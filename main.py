@@ -1,50 +1,134 @@
-import json, os, time
-from websockets import Data
+import json, os, time, logging
+
+from pathlib import Path
 from dotenv import load_dotenv
 from google import genai
-import yfinance as yf
-import pandas_ta as ta
+from typing import Dict
+
 from utils.data.DataFetcher import DataFetcher
 from analytics.MarketAnalyst import MarketAnalyst
 
+# --- Configuration & Setup ---
 load_dotenv()
-FOLDER_PATH = './configs/'
-all_stock_configs = os.listdir(FOLDER_PATH)
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+# Path handling
+CONFIG_DIR = Path('./configs/')
+OUTPUT_DIR = Path('./outputs/')
+
+# Flags
+SAVE_OUTPUTS = True # True: saves both prompt and the LLM response to file
+AUTO_TRADE = False # True: the bot will make final decision and trade based on LLM response. False: user should examines the outputs and use the trade.py to place order.
+RATE_LIMIT_DELAY = 60 # Seconds to sleep to respect API limits. Remove/update if you have paied tier.
+LLM_MODEL_NAME = "gemini-3.1-pro-preview" # The specific AI model name you want to use. 
+WHICH_API_KEY = "GEMINI_API_KEY"
 
 
-generate_prompt_files = True # True: if you want to inspect the prompt, this will generate a .txt file for each prompt; False: if you don't want to generate the .txt file
+
+def process_stock_data(config_file: Path) -> str:
+    """Fetches data and generates an LLM prompt for a stocks config."""
+
+    logger.info(f"Processing data for {config_file.name}...")
+
+    try:
+        data_loader = DataFetcher(config_file=str(config_file))
+        data_loader.fetch_data()
+
+        market_analyst = MarketAnalyst(config_file=str(config_file))
+        market_analyst.load_data()
+
+        technical = market_analyst.calculate_technicals()
+        prompt = market_analyst.generate_llm_prompt(technical)
+
+        return prompt
+    
+    except Exception as e:
+        logger.error(f"Fail to process {config_file.name}: {e}")
+        return ""
+
+
+
+def get_llm_analysis(client: genai.Client, prompt: str, config_file: str) -> str:
+    """Queries the LLM API with the generated prompt."""
+
+    logger.info(f"Queries LLM for {config_file}...")
+
+    try:
+        response = client.models.generate_content(
+            model=LLM_MODEL_NAME,
+            contents=prompt
+        )
+
+        return response.text
+    
+    except Exception as e:
+        logger.error(f"LLM API call failed for {config_file}: {e}")
+        return ""
+    
+
+
+def main():
+
+    # 1. Validate API Key
+    llm_api_key = os.getenv(WHICH_API_KEY)
+    if not llm_api_key:
+        raise ValueError(f"{WHICH_API_KEY} environment variable is missing. Check your .env file.")
+    
+    client = genai.Client(api_key=llm_api_key)
+
+    # 2. Prepare Directories
+    if SAVE_OUTPUTS:
+        OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    valid_configs = [f for f in CONFIG_DIR.iterdir() if f.is_file and not f.name.startswith('.')]
+
+    if not valid_configs:
+        logger.warning(f"No valid configuration files found in {CONFIG_DIR}")
+        return
+    
+    # {config_file.name: prompt}
+    prompts: Dict[str, str] = {}
+    # {config_file.name: response}
+    responses: Dict[str, str] = {}
+
+    # 3. Phase One: Data Processing
+    logger.info("----- Starting Data Processing Phase -----")
+    for idx, config_path in enumerate(valid_configs):
+        prompt = process_stock_data(config_path)
+
+        if prompt:
+            prompts[config_path.stem] = prompt
+        
+        if idx < len(valid_configs) - 1 and RATE_LIMIT_DELAY > 0:
+            logger.info(f"Sleeping for {RATE_LIMIT_DELAY} seconds for rate limits...")
+            time.sleep(RATE_LIMIT_DELAY)
+
+    # 4. Phase Two: LLM Inference
+    logger.info("----- Starting LLM Inference Phase -----")
+    for config_file_name, prompt in prompts.items():
+        response_text = get_llm_analysis(client, prompt, config_file_name)
+
+        if response_text:
+            responses[config_file_name] = response_text
+
+            if SAVE_OUTPUTS:
+                prompt_file = OUTPUT_DIR / f"{config_file_name}_prompt.txt"
+                prompt_file.write_text(prompt, encoding="utf-8")
+
+                response_file = OUTPUT_DIR / f"{config_file_name}_response.txt"
+                response_file.write_text(response_text, encoding="utf-8")
+
+                logger.info(f"Saved outputs for {config_file_name} in {OUTPUT_DIR}")
+
+    logger.info("Pipline excution complete.")
+
 
 
 if __name__ == "__main__":
-
-    technical_list = {}
-    prompts = {}
-
-    for c in all_stock_configs:
-        data_loader = DataFetcher(config_file=f"{FOLDER_PATH}{c}")
-        data_loader.fetch_data()
-        if c != all_stock_configs[-1]:
-            time.sleep(60) # To make sure API call stays in the limit of 5 times per min, remove if you have paid version
-        
-        market_analyst = MarketAnalyst(config_file=f"{FOLDER_PATH}{c}")
-        market_analyst.load_data()
-        technical = market_analyst.calculate_technicals()
-        technical_list[c] = technical
-        prompts[c] = market_analyst.generate_llm_prompt(technical)
-    
-    client = genai.Client(api_key=GEMINI_API_KEY)
-    responses = {}
-
-    for k in prompts:
-        resp = client.models.generate_content(
-            model="gemini-3.1-pro-preview",
-            contents=p
-        )
-        responses[k] = resp.text
-
-        if generate_prompt_files:
-            with open(f"{k}.txt", "w") as file:
-                file.write(resp.text)
-
-
+    main()
