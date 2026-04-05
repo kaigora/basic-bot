@@ -1,4 +1,4 @@
-import json, os, time, logging
+import json, os, time, logging, requests
 
 from pathlib import Path
 from dotenv import load_dotenv
@@ -27,7 +27,7 @@ SAVE_OUTPUTS = True # True: saves both prompt and the LLM response to file
 AUTO_TRADE = False # True: the bot will make final decision and trade based on LLM response. False: user should examines the outputs and use the trade.py to place order.
 RATE_LIMIT_DELAY = 60 # Seconds to sleep to respect API limits. Remove/update if you have paied tier.
 LLM_MODEL_NAME = "gemini-3.1-pro-preview" # The specific AI model name you want to use. 
-WHICH_API_KEY = "GEMINI_API_KEY"
+WHICH_API_KEY = "GEMINI_API_KEY" # Which API key in .env is used for LLM response, need to match the variable name of your choice of API Key in .env
 
 
 
@@ -70,7 +70,12 @@ def get_llm_analysis(client: genai.Client, prompt: str, config_file: str) -> str
     except Exception as e:
         logger.error(f"LLM API call failed for {config_file}: {e}")
         return ""
-    
+
+
+
+
+def generate_order(response: str) -> str:
+    pass
 
 
 def main():
@@ -126,8 +131,29 @@ def main():
 
                 logger.info(f"Saved outputs for {config_file_name} in {OUTPUT_DIR}")
 
-    logger.info("Pipline excution complete.")
+    if AUTO_TRADE:
+        # 5. Phase Three: Generate and Place Order in Kaigora
+        # (Only triggered when AUTO_TRADE is True)        
+        orders = []
+        for config_file_name, response in responses.items():
+            orders.append(generate_order())
 
+        try:
+            kaigora_response = requests.post("http://61.169.200.18:61067/api/v1/orders",
+                headers={
+                "Content-Type": "application/json",
+                "Authorization": f"Bearer {os.getenv("KAIGORA_API_KEY")}"
+                },
+                json={
+                    "items": orders
+                }
+            )
+        
+        except Exception as e:
+            logger.error(f"Order failed to process due to: {e}")
+
+
+    logger.info("Pipline excution complete.")
 
 
 if __name__ == "__main__":
