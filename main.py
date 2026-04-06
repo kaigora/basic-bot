@@ -142,7 +142,7 @@ def main():
             orders.append(generate_order())
 
         try:
-            kaigora_response = requests.post("http://61.169.200.18:61067/api/v1/orders",
+            kaigora_response = requests.post("http://kaigora.com/api/v1/orders",
                 headers={
                 "Content-Type": "application/json",
                 "Authorization": f"Bearer {os.getenv("KAIGORA_API_KEY")}"
