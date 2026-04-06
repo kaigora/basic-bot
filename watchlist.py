@@ -15,7 +15,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Path handling
-CONFIG_DIR = Path("./config")
+CONFIG_DIR = Path("./configs/")
 
 # --- Instructions ---
 # Modifies the following parameters to suit your needs
@@ -35,7 +35,9 @@ ACTION = "CREATE" # This can be "CREATE" or "MODIFY". Create new file or modify 
 
 
 def main():
-    if ACTION.upper() not in ["CREATE", "MODIFY"]:
+    safe_action = ACTION.upper()
+
+    if safe_action.upper() not in ["CREATE", "MODIFY"]:
         logger.error(f"ACTION: '{ACTION}' not recognized, choose from 'CREATE' or 'MODIFY'.")
         return
 
@@ -47,13 +49,13 @@ def main():
         logger.error("No stock information provided, check instruction and add stock information.")
         return
     
-    file_name = f"{FILE_NAME}.json"
     
-    if ACTION == "CREATE":
+    if safe_action == "CREATE":
+        file_name = f"{FILE_NAME}.json"
         new_watchlist(file_name, SECTOR, STOCK_LIST)
         logger.info(f"New watchlist {FILE_NAME} has been created with the following stocks: {', '.join(STOCK_LIST)}.")
 
-    elif ACTION == "MODIFY":
+    elif safe_action == "MODIFY":
         file_name = CONFIG_DIR / f"{FILE_NAME}.json"
 
         if len(STOCK_TO_ADD) > 0:
