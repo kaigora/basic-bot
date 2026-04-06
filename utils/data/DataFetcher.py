@@ -16,11 +16,6 @@ class DataFetcher:
         self.local_db_path = os.getenv('LOCAL_DB_PATH')
         self.load_config()
 
-    
-    def update_config(self, ticker:str, new:bool=False, watching_since:str=None) -> None:
-        # TODO: to make updating config file more efficient, we can directly update the specific attribute to same value for a list of tickers
-        pass
-
 
     
     def dynamic_indicator_adjustor(self) -> None:
@@ -90,7 +85,7 @@ class DataFetcher:
         df_market.to_csv(f'{self.local_db_path}market_{date}.csv', index=False, mode='a', header=True)
 
 
-    def fetch_data(self, start_date:str=None, end_date:str=None, years:int=2, no_skip:bool=False) -> None:
+    def fetch_data(self, start_date:str=None, end_date:str=None, years:int=2, no_skip:bool=False, sleep_time:int=60) -> None:
         # need consistent timestamp for new ticker and exsiting ticker when fetching data.
         today = datetime.now().strftime('%Y-%m-%d')
         start_date = datetime.strptime(start_date, '%Y-%m-%d') if start_date else None
@@ -143,7 +138,7 @@ class DataFetcher:
                 df.to_csv(f'{self.local_db_path}{ticker}.csv', index=False, mode='a', header=False)
 
             if i % 5 == 0:
-                time.sleep(60)  # Sleep for 1 munites after every 5 tickers to avoid hitting API rate limits
+                time.sleep(sleep_time)  # Sleep for 1 munites after every 5 tickers to avoid hitting API rate limits
 
         self.config_data['last_updated'] = today
         with open(self.config_file, 'w') as file:

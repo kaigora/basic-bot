@@ -1,0 +1,52 @@
+[
+  {
+    "asset": "JPM",
+    "decision": "HOLD",
+    "reason": "Momentum is currently BEARISH as the 20-period VWMA (288.77) remains below the 50-period VWMA (298.84). A BUY signal requires bullish momentum."
+  },
+  {
+    "asset": "RY",
+    "decision": "HOLD",
+    "reason": "Momentum is currently BEARISH as the 20-period VWMA (162.02) remains below the 50-period VWMA (166.67). A BUY signal requires bullish momentum."
+  },
+  {
+    "asset": "BAC",
+    "decision": "HOLD",
+    "reason": "Momentum is currently BEARISH as the 20-period VWMA (47.79) remains below the 50-period VWMA (50.58). A BUY signal requires bullish momentum."
+  },
+  {
+    "asset": "TD",
+    "decision": "HOLD",
+    "reason": "Momentum is currently BEARISH as the 20-period VWMA (93.87) remains below the 50-period VWMA (95.23). A BUY signal requires bullish momentum."
+  },
+  {
+    "asset": "BMO",
+    "decision": "HOLD",
+    "reason": "Momentum is currently BEARISH as the 20-period VWMA (136.66) remains below the 50-period VWMA (140.00). A BUY signal requires bullish momentum."
+  },
+  {
+    "asset": "WFC",
+    "decision": "HOLD",
+    "reason": "Momentum is currently BEARISH as the 20-period VWMA (77.82) remains below the 50-period VWMA (83.53). A BUY signal requires bullish momentum."
+  },
+  {
+    "asset": "BNS",
+    "decision": "HOLD",
+    "reason": "Momentum is currently BEARISH as the 20-period VWMA (69.59) remains below the 50-period VWMA (72.88). A BUY signal requires bullish momentum."
+  },
+  {
+    "asset": "ING",
+    "decision": "HOLD",
+    "reason": "Momentum is currently BEARISH as the 20-period VWMA (25.92) remains below the 50-period VWMA (27.79). A BUY signal requires bullish momentum."
+  },
+  {
+    "asset": "C",
+    "decision": "HOLD",
+    "reason": "Momentum is currently BEARISH as the 20-period VWMA (109.56) remains below the 50-period VWMA (112.35). A BUY signal requires bullish momentum."
+  },
+  {
+    "asset": "MS",
+    "decision": "HOLD",
+    "reason": "Momentum is currently BEARISH as the 20-period VWMA (160.75) remains below the 50-period VWMA (169.64). A BUY signal requires bullish momentum."
+  }
+]

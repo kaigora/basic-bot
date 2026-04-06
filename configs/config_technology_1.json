@@ -1,10 +1,10 @@
 {
-    "last_updated": "2026-03-30",
+    "last_updated": "2026-04-05",
     "sector": "Technology",
     "stocks": {
         "AAPL": {
             "new": false,
-            "watching_since": "2026-03-30",
+            "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
             "fetch_headlines": true,
@@ -63,7 +63,7 @@
         },
         "GOOGL": {
             "new": false,
-            "watching_since": "2026-03-30",
+            "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
             "fetch_headlines": true,
@@ -122,7 +122,7 @@
         },
         "TSLA": {
             "new": false,
-            "watching_since": "2026-03-30",
+            "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
             "fetch_headlines": true,
@@ -181,7 +181,7 @@
         },
         "NVDA": {
             "new": false,
-            "watching_since": "2026-03-30",
+            "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
             "fetch_headlines": true,
@@ -240,7 +240,7 @@
         },
         "AMZN": {
             "new": false,
-            "watching_since": "2026-03-30",
+            "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
             "fetch_headlines": true,
@@ -299,7 +299,7 @@
         },
         "META": {
             "new": false,
-            "watching_since": "2026-03-30",
+            "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
             "fetch_headlines": true,
@@ -358,7 +358,7 @@
         },
         "MSFT": {
             "new": false,
-            "watching_since": "2026-03-30",
+            "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
             "fetch_headlines": true,
@@ -417,7 +417,7 @@
         },
         "AMD": {
             "new": false,
-            "watching_since": "2026-03-30",
+            "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
             "fetch_headlines": true,
@@ -476,7 +476,7 @@
         },
         "AVGO": {
             "new": false,
-            "watching_since": "2026-03-30",
+            "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
             "fetch_headlines": false,
@@ -535,7 +535,7 @@
         },
         "PLTR": {
             "new": false,
-            "watching_since": "2026-03-30",
+            "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
             "fetch_headlines": false,

@@ -1,9 +1,10 @@
 import json, os, time, logging, requests
 
+from typing import Dict
+
 from pathlib import Path
 from dotenv import load_dotenv
 from google import genai
-from typing import Dict
 
 from utils.data.DataFetcher import DataFetcher
 from analytics.MarketAnalyst import MarketAnalyst
@@ -22,10 +23,11 @@ logger = logging.getLogger(__name__)
 CONFIG_DIR = Path('./configs/')
 OUTPUT_DIR = Path('./outputs/')
 
-# Flags
+# --- Instructions ---
+# Modifies the following parameters to suit your needs
 SAVE_OUTPUTS = True # True: saves both prompt and the LLM response to file
 AUTO_TRADE = False # True: the bot will make final decision and trade based on LLM response. False: user should examines the outputs and use the trade.py to place order.
-RATE_LIMIT_DELAY = 60 # Seconds to sleep to respect API limits. Remove/update if you have paied tier.
+RATE_LIMIT_DELAY = 60 # Seconds to sleep to respect API limits. Remove/update if you have paied tier or using a different API for data.
 LLM_MODEL_NAME = "gemini-3.1-pro-preview" # The specific AI model name you want to use. 
 WHICH_API_KEY = "GEMINI_API_KEY" # Which API key in .env is used for LLM response, need to match the variable name of your choice of API Key in .env
 
@@ -38,7 +40,7 @@ def process_stock_data(config_file: Path) -> str:
 
     try:
         data_loader = DataFetcher(config_file=str(config_file))
-        data_loader.fetch_data()
+        data_loader.fetch_data(sleep_time=RATE_LIMIT_DELAY)
 
         market_analyst = MarketAnalyst(config_file=str(config_file))
         market_analyst.load_data()
@@ -133,7 +135,8 @@ def main():
 
     if AUTO_TRADE:
         # 5. Phase Three: Generate and Place Order in Kaigora
-        # (Only triggered when AUTO_TRADE is True)        
+        # (Only triggered when AUTO_TRADE is True)
+        logger.info("----- Starting Auto Trade Phase -----")        
         orders = []
         for config_file_name, response in responses.items():
             orders.append(generate_order())

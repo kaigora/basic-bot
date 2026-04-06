@@ -1,0 +1,52 @@
+[
+  {
+    "asset": "AAPL",
+    "decision": "HOLD",
+    "reasoning": "Momentum is strictly bearish as the 20-period VWMA (252.85) remains below the 50-period VWMA (260.91). Lacks bullish momentum required for a BUY."
+  },
+  {
+    "asset": "GOOGL",
+    "decision": "HOLD",
+    "reasoning": "Momentum is bearish with the 20-period VWMA (295.83) sitting well below the 50-period VWMA (311.38). No technical setup for a long position."
+  },
+  {
+    "asset": "TSLA",
+    "decision": "HOLD",
+    "reasoning": "Price action and momentum are bearish. The 20-period VWMA (382.74) is below the 50-period VWMA (402.45), failing the primary bullish condition."
+  },
+  {
+    "asset": "NVDA",
+    "decision": "HOLD",
+    "reasoning": "The 20-period VWMA (177.35) remains below the 50-period VWMA (182.36). Momentum is bearish, strictly disqualifying any BUY signal."
+  },
+  {
+    "asset": "AMZN",
+    "decision": "HOLD",
+    "reasoning": "Momentum remains bearish with the 20-period VWMA (209.11) tracking below the 50-period VWMA (213.73). Setup is not favorable for a high-probability swing."
+  },
+  {
+    "asset": "META",
+    "decision": "HOLD",
+    "reasoning": "Bearish momentum is dominant, indicated by the 20-period VWMA (589.35) trailing the 50-period VWMA (638.46). No valid entry condition met."
+  },
+  {
+    "asset": "MSFT",
+    "decision": "HOLD",
+    "reasoning": "Technical momentum remains bearish with the 20-period VWMA (383.36) continuing below the 50-period VWMA (404.67)."
+  },
+  {
+    "asset": "AMD",
+    "decision": "HOLD",
+    "reasoning": "Current close price (217.50) exceeds the Upper Bollinger Band (216.91), placing it in the OVERBOUGHT zone. Per the rules, a BUY is strictly forbidden here. Momentum is also inherently bearish."
+  },
+  {
+    "asset": "AVGO",
+    "decision": "HOLD",
+    "reasoning": "Despite positive short-term price action, overall momentum is bearish with the 20-period VWMA (321.37) positioned below the 50-period VWMA (324.30)."
+  },
+  {
+    "asset": "PLTR",
+    "decision": "BUY",
+    "reasoning": "Momentum is distinctly bullish as the 20-period VWMA (151.90) is tracking above the 50-period VWMA (145.66). The asset is not overbought (Price 148.46 < Upper BB 162.12), and rising On-Balance Volume (OBV) confirms the bullish price trajectory."
+  }
+]

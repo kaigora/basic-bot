@@ -1,13 +1,58 @@
+import os, logging
+
+from pathlib import Path
+from dotenv import load_dotenv
 from utils.utils import add_stocks, new_watchlist, remove_stocks
 
-CONFIG_FILE_TECH_1 = './configs/config_technology_1.json'
-CONFIG_FILE_BANK_1 = './configs/config_bank_1.json'
+# --- Configuration & Setup ---
+load_dotenv()
+
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+# Path handling
+CONFIG_DIR = Path("./config")
+
+# --- Instructions ---
+# Modifies the following parameters to suit your needs
+# Enter the file name that you want to modify or create, currently only support the following actions once at a time
+# i.e. modify only one file at a time
+# 1. If you want to create a new file, enter the the file name in FILE_NAME (e.g. "config_mine_1") and you list of stocks in STOCK_LIST ["BHP","RIO","FCX","SCCO","VALE","TECK","NEM","GOLD","AEM","PAAS"]
+# 2. If you want to modify a existing file, enter the file name in FILE_NAME and your list of stocks to add/remove in STOCK_TO_ADD/STOCK_TO_REMOVE respectively
+# (STOCK_LIST, STOCK_TO_ADD, STOCK_TO_REMOVE share the same format)
+# (It's recommended to have at most 10 stocks in one file, for LLM to process infomation more efficiently)
+FILE_NAME = "config_mine_1"
+SECTOR = "Mining"
+STOCK_LIST = ["BHP","RIO","FCX","SCCO","VALE","TECK","NEM","GOLD","AEM","PAAS"]
+STOCK_TO_ADD = [] 
+STOCK_TO_REMOVE = [] 
+ACTION = "CREATE" # This can be "CREATE" or "MODIFY". Create new file or modify (add/remove) existing file
 
 
 
+def main():
+    if ACTION.upper() not in ["CREATE", "MODIFY"]:
+        logger.error(f"ACTION: '{ACTION}' not recognized, choose from 'CREATE' or 'MODIFY'.")
+        return
 
-# new_watchlist('config_bank_1.json', 'Bank', ['JPM', 'RY', 'BAC', 'TD', 'BMO', 'WFC', 'BNS', 'ING', 'C', 'MS'])
+    if not FILE_NAME:
+        logger.error(f"Please provide a FILE_NAME to proceed.")
+        return
+    
+    if len(STOCK_LIST) == 0 and len(STOCK_TO_ADD) == 0 and len(STOCK_TO_REMOVE) == 0:
+        logger.error("No stock information provided, check instruction and add stock information.")
+        return
+    
+    file_name = f"{FILE_NAME}.json"
+    
+    if ACTION == "CREATE":
+        new_watchlist(file_name, SECTOR, STOCK_LIST)
+    elif ACTION == "MODIFY":
 
-add_stocks(CONFIG_FILE_TECH_1, ['RIVN'])
-removed = remove_stocks(CONFIG_FILE_TECH_1,['RIVN'])
-print(removed)
+
+if __name__ == "__main__":
+    main()
