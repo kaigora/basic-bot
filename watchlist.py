@@ -51,8 +51,18 @@ def main():
     
     if ACTION == "CREATE":
         new_watchlist(file_name, SECTOR, STOCK_LIST)
-    elif ACTION == "MODIFY":
+        logger.info(f"New watchlist {FILE_NAME} has been created with the following stocks: {', '.join(STOCK_LIST)}.")
 
+    elif ACTION == "MODIFY":
+        file_name = CONFIG_DIR / f"{FILE_NAME}.json"
+
+        if len(STOCK_TO_ADD) > 0:
+            add_stocks(file_name, STOCK_TO_ADD)
+            logger.info(f"{', '.join(STOCK_TO_ADD)} has been added to {FILE_NAME}.")
+
+        if len(STOCK_TO_REMOVE) > 0:
+            removed = remove_stocks(file_name,STOCK_TO_REMOVE)
+            logger.info(f"{', '.join(STOCK_TO_REMOVE)} has been removed from {FILE_NAME}.")
 
 if __name__ == "__main__":
     main()
