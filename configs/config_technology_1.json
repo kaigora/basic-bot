@@ -3,7 +3,7 @@
     "sector": "Technology",
     "stocks": {
         "AAPL": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
@@ -62,7 +62,7 @@
             }
         },
         "GOOGL": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
@@ -121,7 +121,7 @@
             }
         },
         "TSLA": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
@@ -180,7 +180,7 @@
             }
         },
         "NVDA": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
@@ -239,7 +239,7 @@
             }
         },
         "AMZN": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
@@ -298,7 +298,7 @@
             }
         },
         "META": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
@@ -357,7 +357,7 @@
             }
         },
         "MSFT": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
@@ -416,7 +416,7 @@
             }
         },
         "AMD": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": true,
             "fetch_earnings": false,
@@ -475,7 +475,7 @@
             }
         },
         "AVGO": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
@@ -534,7 +534,7 @@
             }
         },
         "PLTR": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,

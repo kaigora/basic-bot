@@ -3,7 +3,7 @@
     "sector": "Bank",
     "stocks": {
         "JPM": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
@@ -62,7 +62,7 @@
             }
         },
         "RY": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
@@ -121,7 +121,7 @@
             }
         },
         "BAC": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
@@ -180,7 +180,7 @@
             }
         },
         "TD": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
@@ -239,7 +239,7 @@
             }
         },
         "BMO": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
@@ -298,7 +298,7 @@
             }
         },
         "WFC": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
@@ -357,7 +357,7 @@
             }
         },
         "BNS": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
@@ -416,7 +416,7 @@
             }
         },
         "ING": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
@@ -475,7 +475,7 @@
             }
         },
         "C": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
@@ -534,7 +534,7 @@
             }
         },
         "MS": {
-            "new": false,
+            "new": true,
             "watching_since": "2026-04-05",
             "fetch_news": false,
             "fetch_earnings": false,
