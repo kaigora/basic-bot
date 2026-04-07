@@ -91,12 +91,15 @@ def add_stocks(watchlist:str, stocks:list[str], ta:list[dict]=None)->None:
         json.dump(data, outfile, indent=4)
 
         
+
 def update_ta():
     pass
 
 
+
 def update_status():
     pass
+
 
 
 def remove_stocks(watchlist:str, stocks:list[str])->list[str]:
@@ -121,6 +124,8 @@ def remove_stocks(watchlist:str, stocks:list[str])->list[str]:
         json.dump(data, outfile, indent=4)
     
     return removed
+
+
 
 def new_watchlist(file_name:str, sector:str, stocks:list[str], ta:list[dict]=None)->None:
     if ta and len(ta) != 1 and len(ta) != len(stocks):
@@ -166,9 +171,10 @@ def new_watchlist(file_name:str, sector:str, stocks:list[str], ta:list[dict]=Non
 
     
 
-
 def get_watchlist():
     pass
+
+
 
 def get_all_stocks():
     pass
