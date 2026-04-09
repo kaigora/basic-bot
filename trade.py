@@ -22,12 +22,15 @@ OUTPUT_DIR = Path('./outputs/')
 
 # --- Instructions ---
 # Modifies the following parameters to suit your needs
-# Enter your order here in the format of "[STOCK SYMBOL], [BUY/SELL], [AMOUNT($)]"
-# e.g. If you want to buy $10,000 worth of Apple stock enter "AAPL BUY 10000"
+# Enter your order here in the format of "[STOCK SYMBOL] [BUY/SELL] [AMT/SHR] [AMOUNT($)/NUMBER(of stocks)]"
+# e.g. If you want to buy $10,000 worth of Apple stock enter "AAPL BUY AMT 10000"
+# e.g. If you want ot buy 100 shares of Amazon stock enter "AMZN BUY SHR 100"
+# e.g. If you want to sell 100 shares of Amazon stock enter "AMZN SELL SHR 100"
 # You can place multipe orders by seperating the orders with comma (,) at the end of each order
 ORDERS = [
-    "AAPL BUY 10000",
-    "AMZN BUY 5000",
+    "AAPL BUY AMT 10000",
+    "AMZN BUY SHR 100",
+    "AMZN SELL SHR 100"
     # Add to or remove from here based on your examination of the LLM genertaed responses.
 ]
 
@@ -58,7 +61,8 @@ def format_order_for_api(order_list:list)->list[dict]:
             parts = order.split()
             symbol = parts[0].upper()
             action = parts[1].upper()
-            amount = float(parts[2])
+            action_type = parts[2].upper()
+            amount = float(parts[3])
             reference_price = get_ref_price(symbol)
 
             if reference_price == -1.0:
@@ -69,14 +73,26 @@ def format_order_for_api(order_list:list)->list[dict]:
                 logger.warning(f"Skipping '{order}': Action must be BUY or SELL.")
                 continue
 
-            formatted_order.append(
-            {
-                "assetCode": symbol,
-                "side": action,
-                "orderAmount": amount,
-                "referencePrice": reference_price
-            }
-            )
+            if action_type == "AMT" and action == "BUY":
+                formatted_order.append(
+                    {
+                        "assetCode": symbol,
+                        "side": action,
+                        "orderAmount": amount,
+                        "referencePrice": reference_price
+                    }
+                )
+            elif action_type == "SHR":
+                formatted_order.append(
+                    {
+                        "assetCode": symbol,
+                        "side": action,
+                        "orderQuantity": amount,
+                        "referencePrice": reference_price
+                    }
+                )
+            else:
+                logger.warning(f"Skipping '{order}': When BUY acion_type can be AMT or SHR, when SELL action_type can by SHR ")
 
         except Exception as e:
             logger.error(f"Order format for {order} failed due to: {e}")
