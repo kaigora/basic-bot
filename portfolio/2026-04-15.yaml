@@ -1,0 +1,177 @@
+participantId: cnwjnidp8jlmegyw2vvv88qn
+gameCode: quantum-arena
+gameConfig:
+  tradingFeeRate: 0.001
+  initialCapital: 1000000
+  maxPositions: 10
+  canAdjustPosition: true
+  maxPositionAdjustments: -1
+cashBalance: 1
+frozen: 0
+availableCash: 1
+holdingsValue: 1054037.1
+totalEquity: 1054038.1
+totalReturn: 0.054
+positions:
+- assetId: gtts3mmp02rl9tmndynlg2w8
+  assetCode: RIVN
+  assetName: Rivian Automotive, Inc.
+  quantity: 6478.59922179
+  avgCost: 15.42
+  currentPrice: 15.99
+  priceSource: live
+  currentValue: 103592.8
+  currentWeight: 9.83
+  costBasis: 99900
+  unrealizedPnl: 3692.8
+  unrealizedPnlPct: 3.7
+  isLocked: false
+  pendingBuyAmount: 0
+  pendingSellQuantity: 0
+- assetId: jkmvatdo6wnuf7cx4eklcy9e
+  assetCode: TD
+  assetName: Toronto Dominion Bank (The)
+  quantity: 1070.62479906
+  avgCost: 93.31
+  currentPrice: 103.13
+  priceSource: live
+  currentValue: 110413.54
+  currentWeight: 10.48
+  costBasis: 99900
+  unrealizedPnl: 10513.54
+  unrealizedPnlPct: 10.52
+  isLocked: false
+  pendingBuyAmount: 0
+  pendingSellQuantity: 0
+- assetId: bi151zhs4aenkkfrv4b73e57
+  assetCode: BMO
+  assetName: Bank Of Montreal
+  quantity: 734.88303663
+  avgCost: 135.94
+  currentPrice: 148.39
+  priceSource: live
+  currentValue: 109049.29
+  currentWeight: 10.35
+  costBasis: 99900
+  unrealizedPnl: 9149.29
+  unrealizedPnlPct: 9.16
+  isLocked: false
+  pendingBuyAmount: 0
+  pendingSellQuantity: 0
+- assetId: ogpa7godk0y2wvh1qg3fw7j3
+  assetCode: PLTR
+  assetName: Palantir Technologies Inc.
+  quantity: 652.7065434
+  avgCost: 153.055
+  currentPrice: 135.7
+  priceSource: live
+  currentValue: 88572.28
+  currentWeight: 8.4
+  costBasis: 99900
+  unrealizedPnl: -11327.72
+  unrealizedPnlPct: -11.34
+  isLocked: false
+  pendingBuyAmount: 0
+  pendingSellQuantity: 0
+- assetId: oy7umctcuow4vuhfeub6z580
+  assetCode: NVO
+  assetName: Novo Nordisk A/S
+  quantity: 2752.82446955
+  avgCost: 36.29
+  currentPrice: 39.32
+  priceSource: live
+  currentValue: 108241.06
+  currentWeight: 10.27
+  costBasis: 99900
+  unrealizedPnl: 8341.06
+  unrealizedPnlPct: 8.35
+  isLocked: false
+  pendingBuyAmount: 0
+  pendingSellQuantity: 0
+- assetId: xcv5kzhk7mj7al5mvkzqdqdt
+  assetCode: CRSP
+  assetName: CRISPR Therapeutics AG
+  quantity: 2151.62610381
+  avgCost: 46.43
+  currentPrice: 56.86
+  priceSource: live
+  currentValue: 122341.46
+  currentWeight: 11.61
+  costBasis: 99900
+  unrealizedPnl: 22441.46
+  unrealizedPnlPct: 22.46
+  isLocked: false
+  pendingBuyAmount: 0
+  pendingSellQuantity: 0
+- assetId: vagxyjkzcf00fiha1esazcnj
+  assetCode: VRTX
+  assetName: Vertex Pharmaceuticals Incorporated
+  quantity: 221.64536741
+  avgCost: 450.72
+  currentPrice: 444.28
+  priceSource: live
+  currentValue: 98472.6
+  currentWeight: 9.34
+  costBasis: 99900
+  unrealizedPnl: -1427.4
+  unrealizedPnlPct: -1.43
+  isLocked: false
+  pendingBuyAmount: 0
+  pendingSellQuantity: 0
+- assetId: kexm3gygf9iit8ul6av3qd7j
+  assetCode: NVDA
+  assetName: NVIDIA Corporation
+  quantity: 567.38797069
+  avgCost: 176.07
+  currentPrice: 196.51
+  priceSource: live
+  currentValue: 111497.41
+  currentWeight: 10.58
+  costBasis: 99900
+  unrealizedPnl: 11597.41
+  unrealizedPnlPct: 11.61
+  isLocked: false
+  pendingBuyAmount: 0
+  pendingSellQuantity: 0
+- assetId: b48w3oure4hc0mvm3vudi0aa
+  assetCode: ARM
+  assetName: ARM Holdings PLC Sponsored ADR
+  quantity: 634.89037178
+  avgCost: 157.35
+  currentPrice: 161.22
+  priceSource: live
+  currentValue: 102357.03
+  currentWeight: 9.71
+  costBasis: 99900
+  unrealizedPnl: 2457.03
+  unrealizedPnlPct: 2.46
+  isLocked: false
+  pendingBuyAmount: 0
+  pendingSellQuantity: 0
+- assetId: z2h8dpdw4shh37bi70yr4416
+  assetCode: ISRG
+  assetName: Intuitive Surgical, Inc.
+  quantity: 212.96098913
+  avgCost: 469.1
+  currentPrice: 467.22
+  priceSource: live
+  currentValue: 99499.63
+  currentWeight: 9.44
+  costBasis: 99900
+  unrealizedPnl: -400.37
+  unrealizedPnlPct: -0.4
+  isLocked: false
+  pendingBuyAmount: 0
+  pendingSellQuantity: 0
+orderWindow:
+  isOpen: false
+  reason: Market is closed. Orders submitted now will be queued as PENDING and executed
+    at next market open.
+feeEstimate:
+  buyFeeRate: 0.001
+  sellFeeRate: 0.001
+  exampleBuy1000:
+    principal: 1000
+    fee: 1
+    totalCost: 1001
+timestamp: 1776225979624

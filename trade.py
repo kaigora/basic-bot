@@ -121,6 +121,7 @@ def main():
     
     # 2. Execute the API Call
     logger.info("Dispatching orders to Kaigora API...")
+    
     try:
         kaigora_response = requests.post("http://kaigora.com/api/v1/orders",
             headers={

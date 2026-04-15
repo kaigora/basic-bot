@@ -66,5 +66,7 @@ def main():
             removed = remove_stocks(file_name,STOCK_TO_REMOVE)
             logger.info(f"{', '.join(STOCK_TO_REMOVE)} has been removed from {FILE_NAME}.")
 
+
+
 if __name__ == "__main__":
     main()
