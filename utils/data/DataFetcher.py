@@ -1,6 +1,6 @@
 import os, json, time
 import pandas as pd
-from polygon import RESTClient  
+from massive import RESTClient  
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
 
